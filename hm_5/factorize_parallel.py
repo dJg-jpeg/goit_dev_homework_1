@@ -1,4 +1,5 @@
 from datetime import datetime
+from multiprocessing import Pool
 
 
 def factorize(*numbers):
@@ -17,6 +18,7 @@ def factorize(*numbers):
 
 if __name__ == "__main__":
     start_time = datetime.now()
-    factorize(1024, 59049, 1048576, 9765625, 60466176, 282475249)
+    with Pool(processes=6) as factorize_pool:
+        a, b, c, d, e, f = factorize_pool.map(factorize, (1024, 59049, 1048576, 9765625, 60466176, 282475249))
     scrypt_worktime = (datetime.now() - start_time)
     print(scrypt_worktime)
