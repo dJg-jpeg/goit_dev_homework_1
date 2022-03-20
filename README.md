@@ -1,1 +1,1 @@
-# goit_dev_homework_1
+# goit_dev_small_homeworks
